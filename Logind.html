@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="login.css">
+    <link rel="icon" href="logo.png">
+</head>
+<body>
+    <section>
+        <div class="color"></div>
+        <div class="color"></div>
+        <div class="color"></div>
+        <div class="box">
+            <div class="circle"></div>
+            <div class="circle"></div>
+            <div class="circle"></div>
+            <div class="circle"></div>
+            <div class="circle"></div>
+            
+            <div class="container">
+                <div class="form">
+                    <h2>ĐĂNG NHẬP</h2>
+                    <form>
+                        <div class="inputbox">
+                            <input type="text" placeholder="Tên Đăng Nhập" class="login">
+                        </div>
+                        <div class="inputbox">
+                            <input type="password" placeholder="Mật Khẩu" class="password">
+                        </div>
+                        <div class="inputbox">
+                            <input type="submit" value="Đăng Nhập" class="btn-Button">
+                        </div>
+                        <p class="forget">Chưa có tài khoản?<a href="#" id="DangKi">
+                            Đăng kí
+                        </a></p>
+                        <p class="forget">Thắc mắc?<a href="#">
+                            Liên hệ
+                        </a></p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+const loGin = document.querySelector('.login');
+const passWord = document.querySelector('.password');
+const btnButton = document.querySelector('.btn-Button');
+const container = document.querySelector('.container');
+
+btnButton.addEventListener('click', (event)=> {
+    event.preventDefault();
+    // kt all la so !
+    // ^ bat dau string
+    // \d ki tu so
+    // + 1 of nh lan xh kt so
+    // $ end string
+    if (typeof loGin.value === "string" && !/^\d+$/.test(loGin.value) && loGin.value.trim() !== "" && loGin.value !== "" && passWord.value.trim() !== "" && passWord.value !== "") {
+        window.location.href = "index.html";
+    }
+    else {
+        container.classList.add('active');
+        setTimeout(function() {
+            container.classList.remove('active');
+        }, 3000);
+}
+});
+
+    </script>
+</body>
+</html>
